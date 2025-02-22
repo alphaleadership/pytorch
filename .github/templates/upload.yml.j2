@@ -54,7 +54,7 @@
 
 {%- macro upload_binaries(config, is_windows=False, has_test=True, use_s3=True) -%}
 !{{ config["build_name"] }}-upload:  # Uploading
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     permissions:
       id-token: write
       contents: read

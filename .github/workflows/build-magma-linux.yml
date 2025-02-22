@@ -28,7 +28,7 @@ concurrency:
 
 jobs:
   build-linux-magma:
-    if: github.repository_owner == 'pytorch'
+    if: github.repository_owner == 'alphaleadership'
     runs-on: linux.2xlarge
     permissions:
       id-token: write

@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   check-runner-determinator:
-    if: github.repository_owner == 'pytorch'
+    if: github.repository_owner == 'alphaleadership'
     runs-on: ubuntu-latest
 
     steps:

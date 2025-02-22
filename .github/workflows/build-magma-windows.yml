@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   build-windows-magma:
-    if: github.repository_owner == 'pytorch'
+    if: github.repository_owner == 'alphaleadership'
     runs-on: windows-2019
     strategy:
       matrix:
@@ -42,7 +42,7 @@ jobs:
           path: magma_*_cuda*_*.7z
           name: artifact_${{ matrix.cuda_version }}_${{ matrix.config }}
   push-windows-magma:
-    if: github.repository_owner == 'pytorch'
+    if: github.repository_owner == 'alphaleadership'
     runs-on: ubuntu-22.04
     permissions:
       id-token: write

@@ -21,7 +21,7 @@ permissions: read-all
 
 jobs:
   llm-td:
-    if: github.repository_owner == 'pytorch'
+    if: github.repository_owner == 'alphaleadership'
     name: before-test
     uses: ./.github/workflows/llm_td_retrieval.yml
     permissions:
@@ -37,7 +37,7 @@ jobs:
       contents: read
 
   linux-manylinux-2_28-py3-cpu-s390x-build:
-    if: github.repository_owner == 'pytorch'
+    if: github.repository_owner == 'alphaleadership'
     name: linux-manylinux-2_28-py3-cpu-s390x
     uses: ./.github/workflows/_linux-build.yml
     with:

@@ -36,7 +36,7 @@ concurrency:
 
 jobs:
   get-label-type:
-    if: github.repository_owner == 'pytorch'
+    if: github.repository_owner == 'alphaleadership'
     name: get-label-type
     uses: pytorch/pytorch/.github/workflows/_runner-determinator.yml@main
     with:
@@ -45,7 +45,7 @@ jobs:
       curr_branch: ${{ github.head_ref || github.ref_name }}
       curr_ref_type: ${{ github.ref_type }}
   libtorch-cpu-shared-with-deps-cxx11-abi-build:
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     uses: ./.github/workflows/_binary-build-linux.yml
     needs: get-label-type
     with:
@@ -64,7 +64,7 @@ jobs:
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
   libtorch-cpu-shared-with-deps-cxx11-abi-test:  # Testing
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     needs:
       - libtorch-cpu-shared-with-deps-cxx11-abi-build
       - get-label-type
@@ -86,7 +86,7 @@ jobs:
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
   libtorch-cpu-shared-with-deps-cxx11-abi-upload:  # Uploading
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     permissions:
       id-token: write
       contents: read
@@ -107,7 +107,7 @@ jobs:
     uses: ./.github/workflows/_binary-upload.yml
 
   libtorch-cuda11_8-shared-with-deps-cxx11-abi-build:
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     uses: ./.github/workflows/_binary-build-linux.yml
     needs: get-label-type
     with:
@@ -127,7 +127,7 @@ jobs:
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
   libtorch-cuda11_8-shared-with-deps-cxx11-abi-test:  # Testing
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     needs:
       - libtorch-cuda11_8-shared-with-deps-cxx11-abi-build
       - get-label-type
@@ -150,7 +150,7 @@ jobs:
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
   libtorch-cuda11_8-shared-with-deps-cxx11-abi-upload:  # Uploading
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     permissions:
       id-token: write
       contents: read
@@ -172,7 +172,7 @@ jobs:
     uses: ./.github/workflows/_binary-upload.yml
 
   libtorch-cuda12_4-shared-with-deps-cxx11-abi-build:
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     uses: ./.github/workflows/_binary-build-linux.yml
     needs: get-label-type
     with:
@@ -192,7 +192,7 @@ jobs:
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
   libtorch-cuda12_4-shared-with-deps-cxx11-abi-test:  # Testing
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     needs:
       - libtorch-cuda12_4-shared-with-deps-cxx11-abi-build
       - get-label-type
@@ -215,7 +215,7 @@ jobs:
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
   libtorch-cuda12_4-shared-with-deps-cxx11-abi-upload:  # Uploading
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     permissions:
       id-token: write
       contents: read
@@ -237,7 +237,7 @@ jobs:
     uses: ./.github/workflows/_binary-upload.yml
 
   libtorch-cuda12_6-shared-with-deps-cxx11-abi-build:
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     uses: ./.github/workflows/_binary-build-linux.yml
     needs: get-label-type
     with:
@@ -257,7 +257,7 @@ jobs:
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
   libtorch-cuda12_6-shared-with-deps-cxx11-abi-test:  # Testing
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     needs:
       - libtorch-cuda12_6-shared-with-deps-cxx11-abi-build
       - get-label-type
@@ -280,7 +280,7 @@ jobs:
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
   libtorch-cuda12_6-shared-with-deps-cxx11-abi-upload:  # Uploading
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     permissions:
       id-token: write
       contents: read
@@ -302,7 +302,7 @@ jobs:
     uses: ./.github/workflows/_binary-upload.yml
 
   libtorch-cuda12_8-shared-with-deps-cxx11-abi-build:
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     uses: ./.github/workflows/_binary-build-linux.yml
     needs: get-label-type
     with:
@@ -322,7 +322,7 @@ jobs:
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
   libtorch-cuda12_8-shared-with-deps-cxx11-abi-test:  # Testing
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     needs:
       - libtorch-cuda12_8-shared-with-deps-cxx11-abi-build
       - get-label-type
@@ -345,7 +345,7 @@ jobs:
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
   libtorch-cuda12_8-shared-with-deps-cxx11-abi-upload:  # Uploading
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     permissions:
       id-token: write
       contents: read
@@ -367,7 +367,7 @@ jobs:
     uses: ./.github/workflows/_binary-upload.yml
 
   libtorch-rocm6_2_4-shared-with-deps-cxx11-abi-build:
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     uses: ./.github/workflows/_binary-build-linux.yml
     needs: get-label-type
     with:
@@ -387,7 +387,7 @@ jobs:
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
   libtorch-rocm6_2_4-shared-with-deps-cxx11-abi-test:  # Testing
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     needs:
       - libtorch-rocm6_2_4-shared-with-deps-cxx11-abi-build
       - get-label-type
@@ -437,7 +437,7 @@ jobs:
       - name: Teardown ROCm
         uses: ./.github/actions/teardown-rocm
   libtorch-rocm6_2_4-shared-with-deps-cxx11-abi-upload:  # Uploading
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     permissions:
       id-token: write
       contents: read
@@ -459,7 +459,7 @@ jobs:
     uses: ./.github/workflows/_binary-upload.yml
 
   libtorch-rocm6_3-shared-with-deps-cxx11-abi-build:
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     uses: ./.github/workflows/_binary-build-linux.yml
     needs: get-label-type
     with:
@@ -479,7 +479,7 @@ jobs:
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
   libtorch-rocm6_3-shared-with-deps-cxx11-abi-test:  # Testing
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     needs:
       - libtorch-rocm6_3-shared-with-deps-cxx11-abi-build
       - get-label-type
@@ -529,7 +529,7 @@ jobs:
       - name: Teardown ROCm
         uses: ./.github/actions/teardown-rocm
   libtorch-rocm6_3-shared-with-deps-cxx11-abi-upload:  # Uploading
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     permissions:
       id-token: write
       contents: read

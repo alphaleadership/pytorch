@@ -55,7 +55,7 @@ on:
 jobs:
   build-docs:
     # Don't run on forked repos.
-    if: github.repository_owner == 'pytorch'
+    if: github.repository_owner == 'alphaleadership'
     runs-on: ${{ matrix.runner }}
     environment: ${{ (github.ref == 'refs/heads/main' || startsWith(github.event.ref, 'refs/tags/v')) && 'pytorchbot-env' || '' }}
     strategy:

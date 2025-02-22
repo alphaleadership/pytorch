@@ -51,7 +51,7 @@ env:
 
 jobs:
   get-label-type:
-    if: github.repository_owner == 'pytorch'
+    if: github.repository_owner == 'alphaleadership'
     name: get-label-type
     uses: pytorch/pytorch/.github/workflows/_runner-determinator.yml@main
     with:
@@ -62,7 +62,7 @@ jobs:
 
 {%- for config in build_configs %}
   !{{ config["build_name"] }}-build:
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     uses: ./.github/workflows/_binary-build-linux.yml
     needs: get-label-type
     with:!{{ upload.binary_env_as_input(config) }}
@@ -93,7 +93,7 @@ jobs:
 
   {%- if config["gpu_arch_type"] != "cuda-aarch64" %}
   !{{ config["build_name"] }}-test:  # Testing
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     needs:
       - !{{ config["build_name"] }}-build
       - get-label-type

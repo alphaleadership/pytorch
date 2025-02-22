@@ -11,7 +11,7 @@ jobs:
   get-label-type:
     name: get-label-type
     # Don't run on forked repos
-    if: github.repository_owner == 'pytorch'
+    if: github.repository_owner == 'alphaleadership'
     uses: pytorch/pytorch/.github/workflows/_runner-determinator.yml@main
     with:
       triggering_actor: ${{ github.triggering_actor }}
@@ -21,7 +21,7 @@ jobs:
 
   llm-retrieval:
     # Don't run on forked repos
-    if: github.repository_owner == 'pytorch'
+    if: github.repository_owner == 'alphaleadership'
     runs-on: "${{ needs.get-label-type.outputs.label-type }}linux.4xlarge"
     continue-on-error: true
     needs: get-label-type

@@ -34,7 +34,7 @@ jobs:
       contents: read
       pull-requests: write
     name: Check labels
-    if: github.repository_owner == 'pytorch'
+    if: github.repository_owner == 'alphaleadership'
     runs-on: linux.20_04.4x
     steps:
       - name: Checkout PyTorch

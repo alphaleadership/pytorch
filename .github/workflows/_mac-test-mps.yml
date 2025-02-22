@@ -28,7 +28,7 @@ on:
 
 jobs:
   filter:
-    if: github.repository_owner == 'pytorch'
+    if: github.repository_owner == 'alphaleadership'
     runs-on: [self-hosted, linux.large]
     outputs:
       test-matrix: ${{ steps.filter.outputs.test-matrix }}
@@ -55,7 +55,7 @@ jobs:
   test:
     needs: filter
     # Don't run on forked repos.
-    if: github.repository_owner == 'pytorch' && needs.filter.outputs.is-test-matrix-empty == 'False'
+    if: github.repository_owner == 'alphaleadership' && needs.filter.outputs.is-test-matrix-empty == 'False'
     strategy:
       matrix: ${{ fromJSON(needs.filter.outputs.test-matrix) }}
       fail-fast: false

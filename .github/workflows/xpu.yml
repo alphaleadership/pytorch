@@ -13,7 +13,7 @@ concurrency:
 jobs:
 
   get-label-type:
-    if: github.repository_owner == 'pytorch'
+    if: github.repository_owner == 'alphaleadership'
     name: get-label-type
     uses: pytorch/pytorch/.github/workflows/_runner-determinator.yml@main
     with:
@@ -55,7 +55,7 @@ jobs:
     secrets: inherit
 
   windows-xpu-2025_0-build:
-    if: github.repository_owner == 'pytorch'
+    if: github.repository_owner == 'alphaleadership'
     name: win-vs2022-xpu-2025_0-py3
     uses: ./.github/workflows/_win-build.yml
     with:

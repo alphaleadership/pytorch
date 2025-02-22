@@ -13,7 +13,7 @@ jobs:
   do_update_viablestrict:
     permissions:
       id-token: write
-    if: ${{ github.repository_owner == 'pytorch' }}
+    if: ${{ github.repository_owner == 'alphaleadership' }}
     runs-on: ubuntu-20.04
     environment: ${{ (github.event_name == 'schedule') && 'mergebot' || '' }}
     steps:

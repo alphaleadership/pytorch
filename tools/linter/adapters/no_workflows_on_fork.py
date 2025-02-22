@@ -110,7 +110,7 @@ def check_file(filename: str) -> list[LintMessage]:
                 lambda x: "github.repository == 'pytorch/pytorch'" in x
                 and "github.event_name != 'schedule' || github.repository == 'pytorch/pytorch'"
                 not in x,
-                lambda x: "github.repository_owner == 'pytorch'" in x,
+                lambda x: "github.repository_owner == 'alphaleadership'" in x,
             ]
             if not any(f(if_statement) for f in valid_checks):
                 bad_jobs[job] = if_statement
@@ -135,7 +135,7 @@ def check_file(filename: str) -> list[LintMessage]:
         if failure_type is None:
             # Just need to add an if statement
             replacement += (
-                f"{line}{re_match.group(1)}  if: github.repository_owner == 'pytorch'\n"
+                f"{line}{re_match.group(1)}  if: github.repository_owner == 'alphaleadership'\n"
             )
             continue
 
@@ -176,7 +176,7 @@ def check_file(filename: str) -> list[LintMessage]:
 
         if needs_parens:
             internal_statement = f"({internal_statement})"
-        new_line = f"{internal_statement} && github.repository_owner == 'pytorch'"
+        new_line = f"{internal_statement} && github.repository_owner == 'alphaleadership'"
 
         # I don't actually know if we need the ${{ }} but do it just in case
         new_line = "${{ " + new_line + " }}" + comments
@@ -184,7 +184,7 @@ def check_file(filename: str) -> list[LintMessage]:
         replacement += f"{re_match.group(1)}  if: {new_line}\n"
 
     description = (
-        "Please add checks for if: github.repository_owner == 'pytorch' in the following jobs in this file: "
+        "Please add checks for if: github.repository_owner == 'alphaleadership' in the following jobs in this file: "
         + ", ".join(job for job in bad_jobs)
     )
 

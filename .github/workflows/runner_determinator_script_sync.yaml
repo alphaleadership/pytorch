@@ -11,7 +11,7 @@ on:
 
 jobs:
   python-script-sync-check:
-    if: github.repository_owner == 'pytorch'
+    if: github.repository_owner == 'alphaleadership'
     runs-on: ubuntu-latest
 
     steps:
